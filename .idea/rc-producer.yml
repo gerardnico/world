@@ -1,0 +1,11 @@
+- &defaults
+  files: ["**/__tests__/**/*", "**/*.spec.*", "**/*.test.*", "!**/node_modules/**/*"]
+  script: "node_modules/jest/bin/jest.js"
+  scriptArgs: ["-i", &filePattern '--testPathPattern=[/\\]{1}${fileNameWithoutExt}\.\w+$']
+  rcName: "${fileNameWithoutExt}"
+
+-
+  <<: *defaults
+  lineRegExp: '^\s*(?:test|it|describe)(?:\.[^(]+)?\((?:"|''){1}([^"'']+)'
+  scriptArgs: ["-i", "-t", "${0regExp}", *filePattern]
+  rcName: "${fileNameWithoutExt}.${0}"
