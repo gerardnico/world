@@ -9,6 +9,7 @@
     "src": "src"
   },
   "scripts": {
+    "build":"webpack",
     "test": "jest"
   },
   "keywords": [
@@ -22,6 +23,7 @@
     "vega-lite": "^2.0.1"
   },
   "devDependencies": {
+    "webpack": "^3.8.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
