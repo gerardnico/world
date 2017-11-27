@@ -31,11 +31,15 @@ http://localhost:63342/function-grapher/example/function-grapher.html
     graph.setXMax(5);
 
     var vlSpec = {
+        "title": "A cosinus graph",
+        "height": 300,
+        "width": 600,
         "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
         "data": {
             "values": graph.getData(),
         },
-        "mark": "line",
+        // "mark": {"type": "point", "filled": true}, // or line
+        "mark": {"type": "line", "interpolate": "basis"}, // or line
         "encoding": {
             "x": {
                 "field": "x",
@@ -51,7 +55,7 @@ http://localhost:63342/function-grapher/example/function-grapher.html
                     "title": "Y"
                 }
             }
-
+            //, "tooltip": {"field": "y", "type": "quantitative"}
         }
     };
 
