@@ -1,4 +1,9 @@
 <html>
+
+<!-- To run it on IDEA,
+http://localhost:63342/function-grapher/example/function-grapher.html
+-->
+
 <head>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
@@ -18,7 +23,12 @@
 </style>
 
 <script>
-    var graph = new graphunc.default;
+
+    var func = (x) => Math.cos(x);
+
+    var graph = new graphunc.default(func);
+    graph.setXMin(-5);
+    graph.setXMax(5);
 
     var vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
