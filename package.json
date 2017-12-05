@@ -1,7 +1,7 @@
 {
   "name": "worldjs",
-  "version": "1.0.0",
-  "description": "A world to graph a function",
+  "version": "0.0.1",
+  "description": "A function grapher library",
   "main": "dist/world.js",
   "module": "index.js",
   "directories": {
