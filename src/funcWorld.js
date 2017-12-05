@@ -88,7 +88,7 @@ class funcWorld {
 
         if ("undefined"==typeof selector){
             selector = "body";
-            console.warning("Without selector, only one graph can be rendered in the document.")
+            console.warn("Without selector, only one graph can be rendered in the document.")
         }
 
         var vlSpec = {

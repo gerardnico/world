@@ -1,6 +1,6 @@
 {
   "name": "worldjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A function grapher library",
   "main": "dist/world.js",
   "module": "index.js",
