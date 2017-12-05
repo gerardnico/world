@@ -1,4 +1,4 @@
-import {default as graphunc} from '../src/function-grapher';
+import {default as funcWorld} from '../src/funcWorld';
 
 
 
@@ -6,10 +6,10 @@ import {default as graphunc} from '../src/function-grapher';
 test('Test generated data on simple additive function', () => {
 
     var func = (x) => x+1;
-    var graph = new graphunc(func);
-    graph.setStep(1);
-    graph.setXMin(-10);
-    graph.setXMax(10);
+    var funcGraph = new funcWorld(func);
+    funcGraph.setStep(1);
+    funcGraph.setXMin(-10);
+    funcGraph.setXMax(10);
 
     var expectedData = [ { x: -10, y: -9 },
         { x: -9, y: -8 },
@@ -31,7 +31,7 @@ test('Test generated data on simple additive function', () => {
         { x: 7, y: 8 },
         { x: 8, y: 9 },
         { x: 9, y: 10 } ];
-    expect(graph.getData()).toEqual(expectedData);
+    expect(funcGraph.getData()).toEqual(expectedData);
 
 
 });
@@ -40,7 +40,7 @@ test('xMax < xMin throw an error', () => {
 
     var func = (x) => x+1;
 
-    var graph = new graphunc(func);
+    var graph = new funcWorld(func);
     graph.setStep(1);
     graph.setXMin(10);
     graph.setXMax(-10);

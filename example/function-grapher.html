@@ -8,63 +8,31 @@ http://localhost:63342/function-grapher/example/function-grapher.html
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
-    <script type="text/javascript" src="../dist/function-grapher.js"></script>
+    <script type="text/javascript" src="../dist/world.js"></script>
 </head>
 <body>
-<!-- Container for the visualization -->
+<h1>Default rendering</h1>
 <div id="vis"></div>
+<h1>Tweaked rendering</h1>
+<div id="vis1"></div>
 
-<style>
-
-    /* Add space between Vega-Embed links  */
-    .vega-actions a {
-        margin-right: 5px;
-    }
-</style>
-
-<script>
+<script javascript>
 
     var func = (x) => Math.cos(x);
 
-    var graph = new graphunc.default(func);
-    graph.setXMin(-5);
-    graph.setXMax(5);
 
-    var vlSpec = {
-        "title": "A cosinus graph",
-        "height": 300,
-        "width": 600,
-        "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-        "data": {
-            "values": graph.getData(),
-        },
-        // "mark": {"type": "point", "filled": true}, // or line
-        "mark": {"type": "line", "interpolate": "basis"}, // or line
-        "encoding": {
-            "x": {
-                "field": "x",
-                "type": "quantitative",
-                "axis": {
-                    "title": "X"
-                }
-            },
-            "y": {
-                "field": "y",
-                "type": "quantitative",
-                "axis": {
-                    "title": "Y"
-                }
-            }
-            //, "tooltip": {"field": "y", "type": "quantitative"}
-        }
-    };
+    new world.func(func)
+        .render("#vis"); // Define a CSS selector
 
-    // https://github.com/vega/vega-embed
-    var opt = {
-        actions: false,
-        renderer: "svg"
-    };
-    vegaEmbed("#vis", vlSpec, opt);
+    new world.func(func)
+        .setXMax(5)  // The Max value on the X axis
+        .setXMin(-5) // The Min value on the X axis
+        .setStep(0.5) // The interval between each point on the X axis
+        .setTitle("Cosine") // The title of the graph
+        .setHeight(400) // The height of the graph
+        .setWidth(400) // The width of the graph
+        .render("#vis1"); // Define a CSS selector
+
 </script>
 
 

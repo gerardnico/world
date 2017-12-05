@@ -1,15 +1,15 @@
 {
-  "name": "function-grapher",
+  "name": "worldjs",
   "version": "1.0.0",
-  "description": "To graph a function",
-  "main": "dist/function-grapher.js",
+  "description": "A world to graph a function",
+  "main": "dist/world.js",
   "module": "index.js",
   "directories": {
     "test": "test",
     "src": "src"
   },
   "scripts": {
-    "build":"webpack",
+    "build": "webpack",
     "test": "jest"
   },
   "keywords": [
@@ -17,10 +17,18 @@
     "graph",
     "viz"
   ],
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "roots": [
+      "<rootDir>/test/"
+    ]
+  },
   "author": "Nicolas GERARD",
-  "license": "Apache",
+  "license": "GPL-3.0",
   "dependencies": {
-    "vega-lite": "^2.0.1"
+    "vega-embed": "^3.0.0-rc7"
   },
   "devDependencies": {
     "webpack": "^3.8.1",

@@ -7,7 +7,7 @@ let entry = "./index.js";
 
 // Expose the library as a global variable name
 // Minus is not possible in a variable
-const libraryName = 'graphunc';
+const libraryName = 'world';
 
 // Create the library as an UMD
 // Ie Expose it for the browser and Node
@@ -20,7 +20,7 @@ let buildDirectory = 'dist';
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var env = process.env.WEBPACK_ENV;
 
-let outputFileName = "function-grapher";
+let outputFileName = "world";
 var outputFile = outputFileName + '.js';
 if (env === 'build') {
     plugins.push(new UglifyJsPlugin({ minimize: true }));
@@ -37,5 +37,8 @@ module.exports = {
         libraryTarget: libraryTarget,
         umdNamedDefine: true
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    externals: {
+        "vega-embed": "vegaEmbed"
+    }
 };
