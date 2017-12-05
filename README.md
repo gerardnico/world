@@ -2,11 +2,13 @@
 
 ## Introduction
 
-A function gapher library that graphs a function.
+A function grapher library to graph a function.
+
+
 
 ## Usage
 
-The [function grapher file](./example/function-grapher.html) gives a complete example.
+Tip: The [function grapher file](./example/function-grapher.html) gives a complete example.
 
 ### Step 1: Dependencies
 
@@ -22,7 +24,7 @@ Add the dependencies and the `world.js` library:
 var func = (x) => Math.cos(x);
 
 var graph = new world.func(func)
-    .render();
+    .render(); 
 ```
 
 <img src="https://raw.githubusercontent.com/gerardnico/world/master/example/default_cosine.svg?sanitize=true" alt="Default Cosine">
@@ -30,7 +32,7 @@ var graph = new world.func(func)
 By default:
    * the coordinates of the function will be calculated on the range [-10,10] with an interval of 0.1 between each
    * the graph will be rendered:
-      * in the `body` element of the page
+      * in the `body` element of the page. **You need to define a selector in the render function, if you want to output more than one graph by page. See below.**
       * with a `width` of 600 pixels and an `height` of 300 pixels 
 
 
@@ -49,10 +51,12 @@ var graph = new world.func(func)
     .render("#vis"); // Define a CSS selector 
 ```
 
-<img src="https://raw.githubusercontent.com/gerardnico/world/master/example/tweaked_cosine.svg?sanitize=true" alt="Default Cosine">
+<img src="https://raw.githubusercontent.com/gerardnico/world/master/example/tweaked_cosine.svg?sanitize=true" alt="Tweaked Cosine">
 
 
 
 
 ## Notes
+  * An interactive function grapher: https://www.desmos.com/calculator
   * A function grapher for the terminal ?, see [function-graph](https://www.npmjs.com/package/function-graph)
+  
