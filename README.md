@@ -59,4 +59,8 @@ var graph = new world.func(func)
 ## Notes
   * An interactive function grapher: https://www.desmos.com/calculator
   * A function grapher for the terminal ?, see [function-graph](https://www.npmjs.com/package/function-graph)
+
+## TODO
+
+  * Merge  with [Web Graphic](https://github.com/gerardnico/web-graphic)
   
