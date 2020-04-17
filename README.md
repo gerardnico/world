@@ -2,8 +2,7 @@
 
 ## Introduction
 
-A function grapher library to graph a function.
-
+A function grapher library to [graph a mathematical function](https://gerardnico.com/data/type/collection/set/graph).
 
 
 ## Usage
