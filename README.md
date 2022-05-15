@@ -2,7 +2,8 @@
 
 ## Introduction
 
-A function grapher library to [graph a mathematical function](https://gerardnico.com/data/type/collection/set/graph).
+A function grapher library to graph a function.
+
 
 
 ## Usage
@@ -18,7 +19,8 @@ Add the dependencies and the `world.js` library:
   * https://unpkg.com/worldjs
 
 
-### Stap 2: Graph your function
+### Step 2: Graph your function
+
 ```javascript
 var func = (x) => Math.cos(x);
 
@@ -35,7 +37,7 @@ By default:
       * with a `width` of 600 pixels and an `height` of 300 pixels 
 
 
-### Stap 3: Tweak the output
+### Step 3: Tweak the output
 
 You can override and set new properties:
 
@@ -58,8 +60,4 @@ var graph = new world.func(func)
 ## Notes
   * An interactive function grapher: https://www.desmos.com/calculator
   * A function grapher for the terminal ?, see [function-graph](https://www.npmjs.com/package/function-graph)
-
-## TODO
-
-  * Merge  with [Web Graphic](https://github.com/gerardnico/web-graphic)
   
